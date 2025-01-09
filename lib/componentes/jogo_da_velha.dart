@@ -190,7 +190,7 @@ class _JogoDaVelhaState extends State<JogoDaVelha> {
         backgroundColor: Colors.blueAccent,
       ),
       child: Text(
-        _isVsComputer ? 'Jogar contra Humano' : 'Jogar contra Computador',
+        _isVsComputer ? 'Computador' : 'Humano',
         style: const TextStyle(fontSize: 18),
       ),
     );
