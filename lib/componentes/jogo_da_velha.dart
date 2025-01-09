@@ -127,10 +127,12 @@ class _JogoDaVelhaState extends State<JogoDaVelha> {
     );
   }
 
+  // Método para garantir que o tabuleiro tenha um tamanho fixo
   Widget _buildBoard() {
     return Center(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
+        width: 300, // Largura fixa do tabuleiro
+        height: 300, // Altura fixa do tabuleiro
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -145,7 +147,7 @@ class _JogoDaVelhaState extends State<JogoDaVelha> {
         child: GridView.builder(
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
+            crossAxisCount: 3, // 3x3
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
           ),
@@ -160,8 +162,6 @@ class _JogoDaVelhaState extends State<JogoDaVelha> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 alignment: Alignment.center,
-                width: 90,
-                height: 90,
                 child: Text(
                   _board[index],
                   style: const TextStyle(
@@ -190,7 +190,7 @@ class _JogoDaVelhaState extends State<JogoDaVelha> {
         backgroundColor: Colors.blueAccent,
       ),
       child: Text(
-        _isVsComputer ? 'Computador' : 'Humano',
+        _isVsComputer ? 'Jogar contra Humano' : 'Jogar contra Computador',
         style: const TextStyle(fontSize: 18),
       ),
     );
